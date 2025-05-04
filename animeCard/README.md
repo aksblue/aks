@@ -9,6 +9,12 @@ This is an iOS Shortcut that fetches anime data using the Jikan API and displays
 - "Show More / Show Less" toggle for the anime summary.
 - Click on the title to switch between English and Japanese name (if available).
 - Clean layout for anime genres and episode data.
+- Includes Jellycuts-compatible code for easier editing and backup.
+
+### Shortcut Download
+You can install the Anime Info Card shortcut using the link below:
+
+**[Install Anime Info Card Shortcut](https://www.icloud.com/shortcuts/a785cbddd29244d495e1e53e39b574e2)**  
 
 ### Requirements
 - **iOS Shortcuts app**
@@ -21,6 +27,7 @@ This shortcut expects input as a dictionary from another shortcut (such as an an
 ### Dependencies
 - Jikan API: [https://api.jikan.moe/v4](https://api.jikan.moe/v4)
 - A secondary shortcut for API limit handling (`Limit Check For Jikan API`)
+- Jellycuts (optional): You can use the included `.jellycut` file to edit this shortcut in code format.
 
 ### Note
 This shortcut depends on data passed from **other shortcuts** that are not currently public. Because of that, this is **not a standalone shortcut**.  
@@ -31,4 +38,4 @@ If you want to request access to the full system, suggest improvements, or use p
 
 ---
 
-Created by Aks Blue
+Created by Aksblue
