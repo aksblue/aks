@@ -1,0 +1,11 @@
+# Temp or debug files
+*.log
+*.tmp
+
+# macOS hidden files
+.DS_Store
+__MACOSX/
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
