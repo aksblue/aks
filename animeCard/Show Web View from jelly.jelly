@@ -1,0 +1,392 @@
+import Shortcuts
+#Color: red, #Icon: shortcuts
+
+text(text: "${ShortcutInput}") >> text
+getDictionaryFrom(input: Text) >> getDictionaryFrom
+if(Dictionary == nil) {
+	exit()
+} >> IFResult
+var category = Dictionary
+var Englishtitle = Dictionary
+var Defaulttitle = Dictionary
+var starteddate = Dictionary
+var enddate = Dictionary
+var episodes = Dictionary
+var watchepisode = Dictionary
+valuesFrom(dictionary: Dictionary) >> valuesFrom
+splitText(text: Dictionary Value, separator: Custom, customSeparator: ",") >> splitText
+//Unable to get shortcuts action is.workflow.actions.text.trimwhitespace
+repeatEach(Updated Text) {
+	text(text: ""${Repeat Item}" ") >> text 1
+} >> RepeatResult
+combineText(text: Repeat Results, combine: Custom, separator: ",") >> combineText
+var genre = Combined Text
+var id = Dictionary
+valuesFrom(dictionary: Dictionary) >> Image
+url(url: Image) >> url
+encode(input: URL) >> Image
+//Unable to get shortcuts action com.sindresorhus.Actions.TrimWhitespaceIntent
+text(text: "https://api.jikan.moe/v4/anime/${Text with Trimmed Whitespace}") >> text 2
+date() >> date
+runShortcut(name: "Limit Check For Jikan API") >> runShortcut
+downloadURL(url: "${Text}") >> downloadURL
+runShortcut(name: "Limit Check For Jikan API", input: Date) >> runShortcut 1
+getDictionaryFrom(input: Contents of URL) >> getDictionaryFrom 1
+valuesFrom(dictionary: Dictionary) >> valuesFrom 1
+valuesFrom(dictionary: Dictionary Value) >> valuesFrom 2
+valuesFrom(dictionary: Dictionary Value) >> valuesFrom 3
+valuesFrom(dictionary: Dictionary Value) >> synopsis or summary 
+valuesFrom(dictionary: Dictionary Value) >> valuesFrom 4
+splitText(text: Dictionary Value, separator: Custom, customSeparator: "to") >> splitText 1
+getItemFromList(list: Split Text) >> getItemFromList
+var releaseddate = Item from List
+getItemFromList(list: Split Text, type: Last Item) >> getItemFromList 1
+var Enddate = Item from List
+var 45533483-D357-47B4-885E-4BFBF69D4F05 = """<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Example genres
+    const all_genres = [￼];
+    const genresContainer = document.getElementById("genres-container");
+
+    all_genres.forEach(function (genre) {
+      const genreElement = document.createElement("div");
+      genreElement.className = "genre";
+      genreElement.textContent = genre;
+      genresContainer.appendChild(genreElement);
+    });
+
+    // Toggle Summary Expand/Collapse
+    const summary = document.getElementById("summary");
+    const toggleSummary = document.getElementById("toggle-summary");
+
+    // Check if the summary text is too long
+    function adjustSummary() {
+      const originalHeight = summary.scrollHeight; // Total height of the content
+      const maxHeight = 60; // Max height set in CSS
+
+      if (originalHeight > maxHeight) {
+        toggleSummary.style.display = "inline"; // Show the toggle button
+        summary.classList.remove("expanded"); // Collapse initially
+        toggleSummary.textContent = "Show More"; // Reset button text
+      } else {
+        toggleSummary.style.display = "none"; // Hide the toggle button
+        summary.classList.remove("expanded"); // Ensure it's not expanded
+      }
+    }
+
+    toggleSummary.addEventListener("click", function () {
+      if (summary.classList.contains("expanded")) {
+        summary.classList.remove("expanded");
+        toggleSummary.textContent = "Show More";
+      } else {
+        summary.classList.add("expanded");
+        toggleSummary.textContent = "Show Less";
+      }
+    });
+
+    // Copy Anime Title to Clipboard
+    const copyAnimeTitle = document.getElementById("copy-anime-title");
+
+    copyAnimeTitle.addEventListener("click", function () {
+      const animeTitle = document.querySelector("h1").textContent;
+      navigator.clipboard
+        .writeText(animeTitle)
+        .then(function () {
+          copyAnimeTitle.textContent = "Copied!";
+          setTimeout(function () {
+            copyAnimeTitle.textContent = "Copy Anime Title";
+          }, 2000);
+        })
+        .catch(function (error) {
+          console.error("Failed to copy title:", error);
+        });
+    });
+
+    // Adjust summary on page load
+    adjustSummary();
+
+  // Store the original title in a variable
+  let originalTitle = document.querySelector("h1").textContent;
+  let japaneseTitle = "￼"; // You can set this to whatever you want
+  
+  // Toggle between original and Japanese titles
+  const titleElement = document.querySelector("h1");
+  titleElement.addEventListener("click", function () {
+    if (titleElement.textContent === originalTitle) {
+      titleElement.textContent = japaneseTitle;
+    } else {
+      titleElement.textContent = originalTitle;
+    }
+  });
+});
+</script>"""
+text("${45533483-D357-47B4-885E-4BFBF69D4F05}")
+var <script>variable = Text
+var F00658E6-835F-4996-85D8-7A77F44A48F0 = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"> <!-- Add this line -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>￼</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 15px;
+      word-wrap: break-word;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .anime-image {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .info {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+
+    .genres {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .genre {
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 1em;
+      word-wrap: break-word;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .details .summary {
+      overflow: hidden;
+      max-height: 60px;
+      transition: max-height 0.3s ease;
+    }
+
+    .details .summary.expanded {
+      max-height: none;
+    }
+
+    .show-more {
+      cursor: pointer;
+      text-align: left;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #8e44ad;
+      transition: none;
+    }
+
+    .show-more:active {
+      color: #8e44ad;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    .link a {
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
+    .copy-title {
+      font-weight: bold;
+      cursor: pointer;
+      color: #8e44ad;
+      transition: color 0.3s ease;
+    }
+
+    .copy-title:hover {
+      text-decoration: underline;
+      color: #6c3483;
+    }
+
+    /* Dark Mode Styles */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(64, 0, 128, 0.6)), url('https://www.transparenttextures.com/patterns/diagonal-stripes.png');
+        color: #fff;
+      }
+
+      .container {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      h1 {
+        color: #F0E6F7;
+      }
+
+      .genre {
+        background-color: #6200EE;
+        color: #fff;
+      }
+
+      .details .summary {
+        color: #ddd;
+      }
+
+      .show-more {
+        color: #BB86FC;
+      }
+
+      .copy-title {
+        color: #BB86FC;
+      }
+
+      .copy-title:hover {
+        color: #9A66CC;
+      }
+
+      .link a {
+        color: #BB86FC;
+      }
+    }
+
+    /* Light Mode Styles */
+    @media (prefers-color-scheme: light) {
+      body {
+        background: linear-gradient(0deg, rgba(124,93,226,1) 0%, rgba(2,12,107,0.831) 58%, rgba(121,128,218,1) 100%);
+        color: #020c6b;
+      }
+
+      .container {
+        background-color: rgba(240, 248, 255, 0.9);
+      }
+
+      h1 {
+        color: #02216d;
+      }
+
+      .genre {
+        background-color: #70d6ff;
+        color: #020c6b;
+      }
+
+      .details .summary {
+        color: #02216d;
+      }
+
+      .show-more {
+        color: #8e44ad;
+      }
+
+      .copy-title {
+        color: #8e44ad;
+      }
+
+      .copy-title:hover {
+        color: #6c3483;
+      }
+
+      .link a {
+        color: #8e44ad;
+      }
+    }
+
+    /* Hover Effect */
+    .genre:hover {
+      background-color: #3700b3;
+      color: #fff;
+    }
+
+    .right-info {
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+
+    .info-container {
+      display: flex;
+      justify-content: space-between;
+      border-left: 2px solid #ccc;
+      border-right: 2px solid #ccc;
+      border-radius: 15px;
+      padding: 5px 10px; /* Reduced padding to make border height tighter */
+      width: 100%;
+      box-sizing: border-box;
+      gap: 20px;
+    }
+
+    .left-info {
+      font-size: 0.9em; /* Reduced font size for left side */
+      line-height: 1.4; /* Adjusted line-height for better alignment */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>￼</h1>
+    <img src="data:image/jpeg;base64,￼" alt="Anime Image" class="anime-image">
+    <div class="info">
+      <p><strong>Genres:</strong></p>
+      <div class="genres" id="genres-container">
+        <!-- Genres will be dynamically added here -->
+      </div>
+    </div>
+    <div class="info-container">
+      <div class="left-info">
+        <p><strong>Episodes:</strong> ￼</p>
+        <p><strong>Released:</strong> ￼</p>
+        <p><strong>Ended:</strong> ￼</p>
+      </div>
+      <div class="right-info">
+        <p><strong>Episodes Watched:</strong> ￼</p>
+        <p><strong>Watched From:</strong> ￼</p>
+        <p><strong>Watched Until:</strong> ￼</p>
+      </div>
+    </div>
+    <div class="details">
+      <p><strong>Summary:</strong></p>
+      <p class="summary" id="summary">
+        ￼
+      </p>
+      <span class="show-more" id="toggle-summary">Show More</span>
+    </div>
+    <div class="link">
+      <p><span id="copy-anime-title" class="copy-title">Copy Anime Title</span></p>
+    </div>
+  </div>
+￼"""
+text("${F00658E6-835F-4996-85D8-7A77F44A48F0}")
+richTextFromHTML() >> richTextFromHTML
+showWebPage(url: "${Rich Text from HTML}") >> showWebPage
